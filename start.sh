@@ -7,8 +7,14 @@ do
 done
 hciconfig hci0 up
 
+echo "Bluetooth devices:"
+hcitool dev
+
 while :
 do
-    hciconf scan
+    echo "Bluetooth scan"
+    hcitool scan
+    echo "BLE scan"
+    hcitool lescan
     sleep 5
 done
